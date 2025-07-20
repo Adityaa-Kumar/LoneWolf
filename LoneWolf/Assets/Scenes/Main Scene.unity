@@ -272,7 +272,7 @@ MonoBehaviour:
   player: {fileID: 1041503974}
   offset: {x: 0, y: 0, z: -10}
   smoothReturnSpeed: 5
---- !u!1001 &478878706
+--- !u!1001 &424952303
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -320,13 +320,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3445910128168086718, guid: cd7033c343ad93445b139989c1e05e10, type: 3}
-      propertyPath: m_Constraints
-      value: 4
+    - target: {fileID: 4859546218165982085, guid: cd7033c343ad93445b139989c1e05e10, type: 3}
+      propertyPath: moveSpeed
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8150560957923220753, guid: cd7033c343ad93445b139989c1e05e10, type: 3}
       propertyPath: m_Name
-      value: Capsule
+      value: Sheep
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -708,10 +708,6 @@ PrefabInstance:
     - target: {fileID: 5289568475137671713, guid: 94809e31ccb1b774494dc98682cb2605, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6656125883159650655, guid: 94809e31ccb1b774494dc98682cb2605, type: 3}
-      propertyPath: m_Constraints
-      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1145,4 +1141,4 @@ SceneRoots:
   - {fileID: 2112038940}
   - {fileID: 928964191}
   - {fileID: 1041503973}
-  - {fileID: 478878706}
+  - {fileID: 424952303}
