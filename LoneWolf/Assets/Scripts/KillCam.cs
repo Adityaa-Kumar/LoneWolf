@@ -41,18 +41,17 @@ public class KillCam : MonoBehaviour
         if (nearestSheep != null)
         {
             Destroy(nearestSheep);
+            if (GameManager != null)
+                GameManager.PauseGame();
+
+            if (kc != null)
+                kc.SetActive(true);
         }
     }
 
     public IEnumerator KillPause()
     {
         isKilling = true;
-
-        if (GameManager != null)
-            GameManager.PauseGame();
-
-        if (kc != null)
-            kc.SetActive(true);
 
         DestroyClosestSheep();
 
