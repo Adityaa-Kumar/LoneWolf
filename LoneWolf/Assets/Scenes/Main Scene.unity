@@ -283,11 +283,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 446548470751699165, guid: 36ec0a174ba8e7d4984a6416ad5a8f0f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 15.09347
+      value: 14.28
       objectReference: {fileID: 0}
     - target: {fileID: 446548470751699165, guid: 36ec0a174ba8e7d4984a6416ad5a8f0f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.9303517
+      value: 9.13
       objectReference: {fileID: 0}
     - target: {fileID: 446548470751699165, guid: 36ec0a174ba8e7d4984a6416ad5a8f0f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -468,6 +468,18 @@ PrefabInstance:
     - target: {fileID: 3799732845358522374, guid: 36ec0a174ba8e7d4984a6416ad5a8f0f, type: 3}
       propertyPath: m_Name
       value: SheepVision (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800377773840857081, guid: 36ec0a174ba8e7d4984a6416ad5a8f0f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800377773840857081, guid: 36ec0a174ba8e7d4984a6416ad5a8f0f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800377773840857081, guid: 36ec0a174ba8e7d4984a6416ad5a8f0f, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
