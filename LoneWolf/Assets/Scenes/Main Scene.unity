@@ -1960,6 +1960,7 @@ GameObject:
   - component: {fileID: 2132865951}
   - component: {fileID: 2132865953}
   - component: {fileID: 2132865952}
+  - component: {fileID: 2132865954}
   m_Layer: 5
   m_Name: Fill
   m_TagString: Untagged
@@ -2011,7 +2012,7 @@ MonoBehaviour:
   m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 1
+  m_FillAmount: 0
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -2024,6 +2025,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2132865950}
   m_CullTransparentMesh: 1
+--- !u!114 &2132865954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2132865950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba65ca9e5b5799847bda26cb220a7869, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GameManager: {fileID: 1850890755}
+  HungerBar: {fileID: 2132865952}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
