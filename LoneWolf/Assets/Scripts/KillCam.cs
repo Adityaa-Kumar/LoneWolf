@@ -42,10 +42,15 @@ public class KillCam : MonoBehaviour
         {
             Destroy(nearestSheep);
             if (GameManager != null)
+            {
                 GameManager.PauseGame();
+            }
 
             if (kc != null)
+            {
                 kc.SetActive(true);
+                GameManager.hunger += 0.2f;
+            }
         }
     }
 
