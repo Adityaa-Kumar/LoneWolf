@@ -1935,6 +1935,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2571222171189155698, guid: cd7033c343ad93445b139989c1e05e10, type: 3}
+      propertyPath: rotationSpeed
+      value: 90
+      objectReference: {fileID: 0}
     - target: {fileID: 8150560957923220753, guid: cd7033c343ad93445b139989c1e05e10, type: 3}
       propertyPath: m_Name
       value: Sheep
