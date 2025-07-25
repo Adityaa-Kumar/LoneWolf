@@ -6,8 +6,10 @@ public class VisionTrigger : MonoBehaviour
     public string playerTag = "Player";
 
     [Header("Rotation Settings")]
-    public float rotationSpeed = 90f; // Degrees per second
+    public float minRotationSpeed = 60f;  // Minimum random speed
+    public float maxRotationSpeed = 180f; // Maximum random speed
 
+    private float rotationSpeed;
     private Transform parentTransform;
 
     private void Start()
@@ -18,6 +20,9 @@ public class VisionTrigger : MonoBehaviour
         {
             Debug.LogWarning("VisionTrigger: No parent found. Vision cone will not rotate.");
         }
+
+        // Assign a random rotation speed
+        rotationSpeed = Random.Range(minRotationSpeed, maxRotationSpeed);
     }
 
     private void Update()
