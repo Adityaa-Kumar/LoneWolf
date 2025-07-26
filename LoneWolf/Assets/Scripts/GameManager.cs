@@ -3,6 +3,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public float hunger = 0f;
+    public float detect = 0f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
