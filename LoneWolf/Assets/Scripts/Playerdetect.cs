@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class VisionTrigger : MonoBehaviour
+public class PlayerDetect : MonoBehaviour
 {
     [Header("Detection Settings")]
     public string playerTag = "Player";
@@ -27,11 +27,7 @@ public class VisionTrigger : MonoBehaviour
 
     private void Update()
     {
-        if (parentTransform != null)
-        {
-            // Rotate around the parent (sprite's) position on Z axis
-            transform.RotateAround(parentTransform.position, Vector3.forward, rotationSpeed * Time.deltaTime);
-        }
+        
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -49,6 +45,15 @@ public class VisionTrigger : MonoBehaviour
         {
             Debug.Log("Player left vision cone.");
             // Stop alert, etc.
+        }
+    }
+
+    public void rotate()
+    {
+        if (parentTransform != null)
+        {
+            // Rotate around the parent (sprite's) position on Z axis
+            transform.RotateAround(parentTransform.position, Vector3.forward, rotationSpeed * Time.deltaTime);
         }
     }
 }

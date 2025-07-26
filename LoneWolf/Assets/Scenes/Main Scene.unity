@@ -1935,9 +1935,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2571222171189155698, guid: cd7033c343ad93445b139989c1e05e10, type: 3}
-      propertyPath: rotationSpeed
-      value: 90
+    - target: {fileID: 2184277325896802422, guid: cd7033c343ad93445b139989c1e05e10, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7051804119766013316, guid: cd7033c343ad93445b139989c1e05e10, type: 3}
+      propertyPath: m_SpriteTilingProperty.pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7051804119766013316, guid: cd7033c343ad93445b139989c1e05e10, type: 3}
+      propertyPath: m_SpriteTilingProperty.pivot.y
+      value: 0.28866667
       objectReference: {fileID: 0}
     - target: {fileID: 8150560957923220753, guid: cd7033c343ad93445b139989c1e05e10, type: 3}
       propertyPath: m_Name
