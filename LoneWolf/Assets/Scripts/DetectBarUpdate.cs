@@ -1,19 +1,19 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HungerBarUpdate : MonoBehaviour
+public class DetectBarUpdate : MonoBehaviour
 {
     public GameManager GameManager;
-    public Image HungerBar;
+    public Image DetectBar;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        HungerBar.fillAmount = 0;
+        DetectBar.fillAmount = 0;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        HungerBar.fillAmount = GameManager.hunger;
+        DetectBar.fillAmount = GameManager.detect;
     }
 }
