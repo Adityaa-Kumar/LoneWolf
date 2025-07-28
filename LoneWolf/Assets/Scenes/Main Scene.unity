@@ -1358,6 +1358,18 @@ PrefabInstance:
       propertyPath: GameManager
       value: 
       objectReference: {fileID: 1850890755}
+    - target: {fileID: 8469423957637961261, guid: 94809e31ccb1b774494dc98682cb2605, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 1850890755}
+    - target: {fileID: 8469423957637961261, guid: 94809e31ccb1b774494dc98682cb2605, type: 3}
+      propertyPath: circleRadius
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8469423957637961261, guid: 94809e31ccb1b774494dc98682cb2605, type: 3}
+      propertyPath: showDebugCircle
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9201271080927645713, guid: 94809e31ccb1b774494dc98682cb2605, type: 3}
       propertyPath: m_Size.x
       value: 0.15988837
