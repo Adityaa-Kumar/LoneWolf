@@ -10,8 +10,6 @@ public class KillCam : MonoBehaviour
 
     private bool isKilling = false;
 
-    public float hungerIncrement = 0.2f;
-
     void Update()
     {
         if (Input.GetMouseButtonDown(0) && !isKilling)
@@ -51,7 +49,7 @@ public class KillCam : MonoBehaviour
             if (kc != null)
             {
                 kc.SetActive(true);
-                GameManager.hunger += hungerIncrement;
+                GameManager.hunger += 0.2f;
             }
         }
     }
