@@ -152,8 +152,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTag: Player
-  detectRate: 5
-  escapeRate: 2.5
+  detectRate: 1
+  escapeRate: 0.5
   detectValue: 0
   gameManager: {fileID: 0}
 --- !u!1 &8150560957923220753
