@@ -4,8 +4,13 @@ public class PlayerDetect : MonoBehaviour
 {
     [Header("Detection Settings")]
     public string playerTag = "Player";
-    public float detectRate = 5.0f;
-    public float escapeRate = 2.5f;
+
+    [Header("Detection Rate Scaling")]
+    public float baseDetectRate = 5.0f;    // Detect rate at Score = 0
+    public float maxDetectRate = 10.0f;    // Detect rate at max Score
+    public float baseEscapeRate = 2.5f;    // Escape rate at Score = 0
+    public float minEscapeRate = 1.0f;     // Escape rate at max Score
+
     [Range(0f, 1f)]
     public float detectValue = 0f;
 
@@ -15,9 +20,16 @@ public class PlayerDetect : MonoBehaviour
     private bool playerInVision = false;
     private bool wasDetected = false;
 
+    // Current rates, updated dynamically each FixedUpdate
+    private float detectRate;
+    private float escapeRate;
+
+    // Set this to your game's designed max Score for scaling (adjust as needed)
+    public float maxScore = 100f;
+
     void Start()
     {
-        // Validate references
+        // Validate GameManager reference
         if (gameManager == null)
         {
             gameManager = FindFirstObjectByType<GameManager>();
@@ -36,8 +48,14 @@ public class PlayerDetect : MonoBehaviour
 
     void FixedUpdate()
     {
-        // Only update if GameManager exists
         if (gameManager == null) return;
+
+        // Normalize Score between 0 and 1 for scaling rates
+        float ScoreNormalized = Mathf.Clamp01(gameManager.Score / maxScore);
+
+        // Calculate dynamic detection and escape rates based on Score
+        detectRate = Mathf.Lerp(baseDetectRate, maxDetectRate, ScoreNormalized);
+        escapeRate = Mathf.Lerp(baseEscapeRate, minEscapeRate, ScoreNormalized);
 
         bool valueChanged = false;
 
@@ -47,7 +65,6 @@ public class PlayerDetect : MonoBehaviour
             detectValue = Mathf.Clamp01(detectValue);
             valueChanged = true;
 
-            // Check if player was just detected
             if (!wasDetected && detectValue >= 1.0f)
             {
                 wasDetected = true;
@@ -60,7 +77,6 @@ public class PlayerDetect : MonoBehaviour
             detectValue = Mathf.Max(detectValue, 0.0f);
             valueChanged = true;
 
-            // Check if player escaped detection
             if (wasDetected && detectValue <= 0.0f)
             {
                 wasDetected = false;
@@ -68,7 +84,6 @@ public class PlayerDetect : MonoBehaviour
             }
         }
 
-        // Only update GameManager if value changed (performance optimization)
         if (valueChanged)
         {
             gameManager.detect = detectValue;
@@ -93,25 +108,25 @@ public class PlayerDetect : MonoBehaviour
         }
     }
 
-    // Event methods that can be overridden or extended
+    // Event methods - extend or override as needed
     protected virtual void OnPlayerDetected()
     {
         Debug.Log("Player fully detected!", this);
-        // Add any additional logic when player is fully detected
+        // Add your detection logic here (e.g., alert enemies, trigger events)
     }
 
     protected virtual void OnPlayerEscaped()
     {
         Debug.Log("Player escaped detection!", this);
-        // Add any additional logic when player escapes
+        // Add logic for player escaping detection here
     }
 
-    // Public methods for external access
+    // Public getters
     public bool IsPlayerDetected() => detectValue >= 1.0f;
     public bool IsPlayerInVision() => playerInVision;
     public float GetDetectionProgress() => detectValue;
 
-    // Method to reset detection (useful for game resets, respawning, etc.)
+    // Reset detection values
     public void ResetDetection()
     {
         detectValue = 0f;

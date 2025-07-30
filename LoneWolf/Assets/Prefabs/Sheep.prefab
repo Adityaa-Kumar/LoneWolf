@@ -169,6 +169,7 @@ GameObject:
   - component: {fileID: 3445910128168086718}
   - component: {fileID: 8201665262034332435}
   - component: {fileID: 4859546218165982085}
+  - component: {fileID: 24702913360940414}
   m_Layer: 0
   m_Name: Sheep
   m_TagString: Sheep
@@ -259,7 +260,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 100
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 1
@@ -326,3 +327,25 @@ MonoBehaviour:
   moveSpeed: 2
   moveDuration: 2
   fovTriangle: {fileID: 5090410647217020100}
+--- !u!95 &24702913360940414
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8150560957923220753}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 56e286fe4c1827448936757fcd2131dd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

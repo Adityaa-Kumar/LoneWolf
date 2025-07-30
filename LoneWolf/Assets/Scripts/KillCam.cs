@@ -172,6 +172,7 @@ public class KillCam : MonoBehaviour
             if (kc != null)
             {
                 kc.SetActive(true);
+                gameManager.Score += 1;
             }
         }
         else

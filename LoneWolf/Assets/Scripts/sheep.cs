@@ -14,18 +14,18 @@ public class Sheep : MonoBehaviour
     private Vector2 moveDirection;
     private bool isMoving = true;
 
-    // Reference to your FOV triangle GameObject (assign in Inspector)
     [SerializeField] private Transform fovTriangle;
-
-    // Add this line to store the target FOV rotation
     private Quaternion targetFOVRotation;
+
+    // ADD: Reference to Animator
+    private Animator animator;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
         StartCoroutine(MoveAndWaitRoutine());
 
-        // Initialize targetFOVRotation
         float initialAngle = Mathf.Atan2(moveDirection.y, moveDirection.x) * Mathf.Rad2Deg;
         targetFOVRotation = Quaternion.Euler(0f, 0f, initialAngle);
     }
@@ -36,13 +36,24 @@ public class Sheep : MonoBehaviour
 
         if (isMoving && fovTriangle != null)
         {
-            // Calculate target angle based on move direction
             float angle = Mathf.Atan2(moveDirection.y, moveDirection.x) * Mathf.Rad2Deg;
             targetFOVRotation = Quaternion.Euler(0f, 0f, angle);
-
-            // Smoothly rotate towards the target rotation
-            float smoothSpeed = 5f; // Adjust for faster/slower rotation
+            float smoothSpeed = 5f;
             fovTriangle.localRotation = Quaternion.Lerp(fovTriangle.localRotation, targetFOVRotation, Time.fixedDeltaTime * smoothSpeed);
+        }
+
+        // Animation control
+        if (animator != null)
+        {
+            if (isMoving)
+            {
+                animator.speed = 1f; // Play the walk animation normally
+            }
+            else
+            {
+                animator.speed = 0f; // Pause animation
+                animator.Play("SheepWalk", 0, 0f); // Hold on first frame of walk animation ("SheepWalk" is your animation's name)
+            }
         }
     }
 
@@ -50,21 +61,18 @@ public class Sheep : MonoBehaviour
     {
         while (true)
         {
-            // Pick a new random direction and move
             PickRandomDirection();
             isMoving = true;
             yield return new WaitForSeconds(moveDuration);
 
-            // Stop moving
             isMoving = false;
-            float waitTime = Random.Range(7f, 10f); // Wait 7-10 seconds
+            float waitTime = Random.Range(7f, 10f);
             yield return new WaitForSeconds(waitTime);
         }
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        // Reflect move direction on collision while moving
         if (isMoving)
         {
             Vector2 normal = collision.contacts[0].normal;
