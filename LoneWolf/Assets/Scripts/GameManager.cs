@@ -64,7 +64,7 @@ public class GameManager : MonoBehaviour
         hungerDecreaseRate = Mathf.Lerp(baseHungerDecreaseRate, maxHungerDecreaseRate, normalizedScore);
 
         // Check for Game Over condition based on detect value
-        if (detect >= 1f)
+        if (detect >= 1.0f || hunger <= 0.0f)
         {
             gameOverManager.ShowGameOver();
         }
