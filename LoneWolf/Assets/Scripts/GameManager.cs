@@ -26,6 +26,9 @@ public class GameManager : MonoBehaviour
     [Header("Game Over Logic")]
     public GameOverManager gameOverManager;
 
+    [Header("Game Over Logic")]
+    public WinManager winManager;
+
     [Header("Pause")]
     public PauseManager pauseManager;
 
@@ -67,6 +70,11 @@ public class GameManager : MonoBehaviour
         if (detect >= 1.0f || hunger <= 0.0f)
         {
             gameOverManager.ShowGameOver();
+        }
+
+        if (Score == 30)
+        {
+            winManager.ShowGameOver();
         }
 
         // Update the score text UI
